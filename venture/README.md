@@ -1,30 +1,45 @@
 # Savoury Hot Drink Venture — Working Plan
 
-A B2B-first savoury hot-drink business: a 3 g dip-and-serve sachet, three flavours,
-sold into hotels, cafés, gyms and corporate pantries in India, with quick commerce
-for margin and export as a later phase.
+A B2B-first savoury hot-drink business: a 3 g dip-and-serve sachet plus a stick pack, three flavours,
+sold into cafés, gyms, corporate pantries and (from month 4) hotels across Andhra Pradesh and Hyderabad.
+Quick commerce for margin later; export much later.
+
+**Confirmed starting position:** ~₹1,00,000 over 3 months · home setup, no manufacturing unit ·
+existing FSSAI registration (number to be recovered, status unverified) · base Andhra + Hyderabad ·
+both formats from launch.
+
+## Start here
+
+**→ [`05-first-100k-plan.md`](05-first-100k-plan.md) is the operating document.** Tranched budget,
+week-by-week for 13 weeks, gates, and the three corrections that change the original plan.
 
 ## Documents
 
 | File | Contents |
 |---|---|
 | [`00-strategy.md`](00-strategy.md) | Positioning, the naming decision, the LMNT marketing template, segment ranking, virality mechanic, honest risks |
-| [`01-product-packaging.md`](01-product-packaging.md) | SKU architecture, the tea-bag format risk, moisture barrier, how to do two packagings at one cost, spec sheet |
-| [`02-compliance-india.md`](02-compliance-india.md) | Entity, FSSAI (2026 threshold changes), claims law, labelling, Legal Metrology, GST/HSN, trademark, testing |
-| [`03-financials.md`](03-financials.md) | Per-sachet cost build, price list, Phase 1 & 2 P&L, capital plan, working capital, sensitivities |
-| [`04-gtm-execution.md`](04-gtm-execution.md) | Hotel playbook, using warm intros, café/gym channel, quick commerce timing, content plan, 90-day plan |
+| [`01-product-packaging.md`](01-product-packaging.md) | SKU architecture, the infusion-bag format risk, moisture barrier, two packagings at one cost, spec sheet, hing/gluten flag |
+| [`02-compliance-india.md`](02-compliance-india.md) | Entity, FSSAI (2026 threshold + perpetual-validity changes), the claims trap, labelling, Legal Metrology, GST/HSN, trademark, lab testing |
+| [`03-financials.md`](03-financials.md) | Per-sachet cost build, channel price list, Phase 1/2 P&L, full capital plan, working capital, sensitivities — *the destination, not the route* |
+| [`04-gtm-execution.md`](04-gtm-execution.md) | Hotel playbook, warm-intro scripting, café/gym channel, quick-commerce timing, content pillars — *sequencing superseded by 05* |
+| [`05-first-100k-plan.md`](05-first-100k-plan.md) | **The ₹1 lakh / 90-day plan.** Budget tranches with gates, week-by-week, regional specifics |
 
-## The five conclusions that matter most
+## The seven conclusions that matter most
 
-1. **Don't sell rasam — create the savoury hot drink category.** At a ₹3.52 COGS for a 3 g sachet, the product cannot make money as a rasam commodity, and makes 60%+ gross margin as a hot drink. The pricing *is* the positioning. → `00-strategy.md` §1, `03-financials.md` §2
-2. **Sell on subtraction, not on gut health.** "0 sugar · 0 caffeine · 0 dairy · 6 kcal" is legal, free and on-trend. A printed gut-health claim drags you into FSSAI's nutraceutical regime and destroys the "easy to register" advantage you correctly prioritised. → `02-compliance-india.md` §2
-3. **6 kg/day sits at breakeven.** Marketed properly, breakeven is ~6.7 kg/day. Sequence deliberately: validate at ₹1.5L, launch lean at 6 kg/day, then plan ₹26L for 20 kg/day. Don't win a banquet order you can't fill. → `03-financials.md` §1
-4. **Hotels are visibility, not revenue.** A 100-room property yields ~₹4,875/month. Volume comes from banquets, cafés, gyms and corporate pantries; margin comes from quick commerce. Your instinct was right — the numbers confirm it. → `00-strategy.md` §5
-5. **Test the tea bag before you spend anything.** Rasam is built on insoluble dal and tamarind pulp; in a flat filter bag it may deliver weak, thin water. This is the largest technical risk and it costs ~₹10,000 to resolve in week 1. → `01-product-packaging.md` §2
+1. **Don't sell rasam — create the savoury hot drink category.** At ~₹3.50 COGS for a 3 g sachet, this cannot make money as a rasam commodity, and makes 60%+ gross margin as a hot drink at ₹15–25. The pricing *is* the positioning. → `00-strategy.md` §1, `03-financials.md` §2
+2. **Sell on subtraction, not gut health.** `0 SUGAR · 0 CAFFEINE · 0 DAIRY · ~6 KCAL` is legal, free and on-trend. A printed gut-health claim drags you into FSSAI's nutraceutical regime and destroys the "easy to register" advantage you correctly prioritised. → `02-compliance-india.md` §2
+3. **Cafés first, hotels at month 4 via a co-packer.** A hotel purchase desk will not onboard a home-premises producer — it's a document gate, not a taste or selling problem. Cafés reach the same Gen-Z, non-coffee, plant-based audience faster and pay in 15 days instead of 90. → `05-first-100k-plan.md` §1a
+4. **Verify your FSSAI registration before anything else.** FoSCoS → FBO Search recovers the number free. Check three things: Active status, premises address, and whether the product category covers a manufactured seasoning. Perpetual validity only applies to applications dated on/after 1 April 2026, so a pre-April registration may have lapsed. → `05-first-100k-plan.md` §1c
+5. **GST is mandatory for you** — Andhra → Telangana is inter-state supply, so the ₹40 lakh threshold doesn't apply. → `05-first-100k-plan.md` §2
+6. **Test the tea bag in week 1.** Rasam is built on insoluble dal and tamarind pulp; in a flat filter bag it may deliver thin, weak water. Largest technical risk, ~₹10,000 to resolve, and Gate 1 of the budget depends on it. → `01-product-packaging.md` §2
+7. **One person hand-packs 600–1,000 sachets/day, not 2,000.** Your 6 kg/day needs 2–3 people. Plan on 10,000–15,000 sachets/month and don't over-promise a buyer. → `05-first-100k-plan.md` §1b
 
-## Open decisions blocking the next stage
+## Resolved / open
 
-1. **Manufacturing base** — do you have access to a human-food FSSAI-licensed unit, or do we plan around a co-packer? (A pet-food licence does not cover human food.)
-2. **Launch budget band** — this sets whether we run the ₹1.5L validation, the ₹9L lean launch, or the ₹14L full launch.
-3. **Base city** — determines which hotel chains, cafés, gyms and labs we sequence, and the quick-commerce pincode pilot.
-4. **Format call** — infusion bag, stick pack, or both, pending the week-1 blind test.
+**Resolved:** budget (₹1L / 3 months) · base (Andhra + Hyderabad) · manufacturing (home setup, co-packer from month 4) · format (both from launch)
+
+**Open:**
+1. **Brand name** — shortlist 4, run the free IP India search in Classes 30 + 32, pick one. Directions in `00-strategy.md` §6.
+2. **FSSAI status, address and product category** — unknown until the FoSCoS lookup. May require a modification filing.
+3. **HSN classification** — 2103 at 5% is the target; needs written CA confirmation before any MRP is printed.
+4. **Which bag** — flat filter vs pyramid mesh, decided by the Gate 1 blind test.

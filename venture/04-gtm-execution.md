@@ -1,5 +1,12 @@
 # 04 — Go-to-Market & Execution Plan
 
+> **Constraints update (read `05-first-100k-plan.md` first).** The capital plan and channel
+> sequencing below were written for a ₹9–14 lakh launch from a licensed unit. The confirmed
+> starting position is **₹1 lakh over 3 months from a home setup in Andhra/Hyderabad**, which
+> changes both the budget and the channel order (cafés and gyms first; hotels at month 4+ via a
+> co-packer). Treat this file as the destination and `05-first-100k-plan.md` as the route.
+
+
 ## 1. The hotel B2B playbook
 
 ### Know who actually decides
