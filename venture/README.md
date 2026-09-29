@@ -10,6 +10,10 @@ both formats from launch.
 
 ## Start here
 
+**→ [`06-viability.md`](06-viability.md) — read this first.** Is it viable on ₹1 lakh from a home
+kitchen? Verdict, offtake-per-account maths, four month-12 scenarios, and the **₹35,000 / 8-week
+test** that answers the only question that matters before you spend the rest.
+
 **→ [`05-first-100k-plan.md`](05-first-100k-plan.md) is the operating document.** Tranched budget,
 week-by-week for 13 weeks, gates, and the three corrections that change the original plan.
 
@@ -23,6 +27,18 @@ week-by-week for 13 weeks, gates, and the three corrections that change the orig
 | [`03-financials.md`](03-financials.md) | Per-sachet cost build, channel price list, Phase 1/2 P&L, full capital plan, working capital, sensitivities — *the destination, not the route* |
 | [`04-gtm-execution.md`](04-gtm-execution.md) | Hotel playbook, warm-intro scripting, café/gym channel, quick-commerce timing, content pillars — *sequencing superseded by 05* |
 | [`05-first-100k-plan.md`](05-first-100k-plan.md) | **The ₹1 lakh / 90-day plan.** Budget tranches with gates, week-by-week, regional specifics |
+| [`06-viability.md`](06-viability.md) | **Viability verdict.** Unit economics vs capacity vs capital, offtake per account type, four scenarios, the ₹35k minimum test, what-would-have-to-be-true, honest market read |
+
+## Viability verdict (short version)
+
+**Proceed — but with a ₹35,000 / 8-week test, not the full ₹1 lakh.** Unit economics are sound
+(65% gross margin). ₹1 lakh is enough to get an answer. The ceiling from a home kitchen is
+~20,000 sachets/month → **~₹67,000/month owner earnings at best**, and the realistic month-12
+range is **₹3,000–₹67,000/month**.
+
+Which end you land on depends on **5–8 corporate-pantry and banquet accounts**, not on café count:
+one corporate pantry is worth ~15 cafés, one banquet relationship ~20 cafés. Cafés and gyms are
+visibility; corporates and banquets are revenue. Full working in [`06-viability.md`](06-viability.md).
 
 ## The seven conclusions that matter most
 
