@@ -28,6 +28,7 @@ week-by-week for 13 weeks, gates, and the three corrections that change the orig
 | [`04-gtm-execution.md`](04-gtm-execution.md) | Hotel playbook, warm-intro scripting, café/gym channel, quick-commerce timing, content pillars — *sequencing superseded by 05* |
 | [`05-first-100k-plan.md`](05-first-100k-plan.md) | **The ₹1 lakh / 90-day plan.** Budget tranches with gates, week-by-week, regional specifics |
 | [`07-naming-and-hook.md`](07-naming-and-hook.md) | **The hook.** What to call it instead of rasam: the price-anchoring trap, tagline, insight line, pack lockup, café menu line, per-channel messaging, brand shortlist, words to never use |
+| [`08-campaigns.md`](08-campaigns.md) | **Launch campaigns.** The 20-Second Brew, Guess What's In It, The 4PM Swap, Savoury vs Sweet, the Blind Flight — sequencing, budget (₹0 paid), and why the chug challenge was redirected |
 | [`06-viability.md`](06-viability.md) | **Viability verdict.** Unit economics vs capacity vs capital, offtake per account type, four scenarios, the ₹35k minimum test, what-would-have-to-be-true, honest market read |
 
 ## Viability verdict (short version)

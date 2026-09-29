@@ -152,27 +152,64 @@ Three reasons this specific wording:
 
 ---
 
-## 7. Brand name shortlist
+## 7. Brand name — the shortlist, corrected
 
-The descriptor above does most of the selling, so the brand name only has to be short, ownable and
-sayable. Two directions:
+### First: both of my earlier suggestions were wrong. Here's why.
 
-**A. Abstract + hard-working descriptor (recommended — the LMNT route)**
-`SIPP` · `TARR` · `NOON` · `OKRA`
-→ **NOON — Savoury Brew.** "Noon" quietly carries the time-of-day occasion, reads in English and
-travels for export. Short, clean, no heritage baggage.
+I recommended `NOON` and `4PM` while simultaneously arguing the name should be arbitrary and let
+the descriptor do the work. Both names break that rule, and both carry concrete problems:
 
-**B. Occasion as the name**
-`4PM` · `AFTER`
-→ **4PM** names the problem in two characters, is natively hashtaggable, and makes the occasion
-unforgettable. Slight risk: harder to trademark as a bare numeral-word combination, and awkward if
-you ever want the morning occasion too.
+**`NOON` — three separate failures**
+1. **Occasion mismatch.** Your occasion is **4 PM**, not noon. The name argues against your own hook every time someone reads it.
+2. **A very large trademark holder.** `noon.com` is a major Middle-Eastern e-commerce group with broad registrations. It kills your export optionality in exactly the region an Indian food exporter goes to first — the Gulf.
+3. **`Noon chai` already exists and is literally this product.** In Kashmiri, *noon* means **salt**, and *noon chai* (nun chai) is a salty savoury tea. Charming coincidence, real problem: you'd be naming a savoury brew after an existing savoury brew. Expect both consumer confusion and prior marks.
 
-**Recommendation: `NOON`, with `4PM` as the fallback.** Run the free IP India public search across
-**Class 30** (condiments, seasonings, soups) and **Class 32** (preparations for making beverages)
-before committing — if you position as a drink, Class 32 is where a competitor could attack you.
+**`4PM` — two failures**
+1. **Registrability.** Numerals and plainly descriptive marks attract objections on absolute grounds under **Section 9 of the Trade Marks Act** for lacking distinctiveness. A bare numeral-plus-time mark in Class 30 is a weak filing.
+2. **It welds you to one occasion.** Your secondary occasion is after dinner, and gyms are a morning-and-evening channel. A clock in the name argues with two of your three channels.
 
----
+### The rule, restated
+
+**The name should mean nothing. The descriptor should mean everything.**
+
+`[NAME] · Savoury Brew · 0 SUGAR · 0 CAFFEINE` — the descriptor and stat block do 100% of the
+selling. So the name's only jobs are: be short, be sayable, be **registrable**, and be *ownable*.
+That argues for an **arbitrary or invented mark**, which is also the strongest category of
+trademark protection you can get. Descriptive names are cheap to think of and expensive to defend.
+
+### Shortlist
+
+| Name | Why it works | Watch out for |
+|---|---|---|
+| **TAMRA** ← recommended | Sanskrit for **copper**. Completely arbitrary for a beverage, which makes it the strongest possible filing in Class 30. Indian-rooted without being a food word. Phonetically nods to **tamarind** — a free gift. And it hands you an entire visual identity: copper, warm metals, the copper tumbler, which is perfect for a hot savoury drink and photographs beautifully. Two syllables, spellable, exports cleanly. | Also a given name and a place name — check for prior marks |
+| **SAVRA** | Invented from *savour*. Semantically helpful without being descriptive, so it hints at the category while staying registrable. Reads unmistakably as a brand. Works in English and Indian mouths equally. | Check phonetic neighbours (Savora is a French mustard) |
+| **LAVAN** | Sanskrit for **salt**. Gives you a one-line brand story — *"Lavan means salt"* — that pays off the whole savoury-not-sweet thesis. Not a commodity food word, so no price anchor. | Mild collision with *laban* (Middle-Eastern yoghurt drink) |
+
+**Recommendation: `TAMRA`.** Arbitrary mark, strongest protection, Indian roots without commodity
+baggage, an accidental tamarind echo, and a ready-made visual world in copper.
+
+Lockup: **TAMRA · Savoury Brew** → *Tamra Pepper, Tamra Lemon, Tamra Beet.*
+
+### The screening gate — run this before you commit to any name
+
+**I cannot verify availability from here, and neither should you take any name on faith.** Run all
+eight. It takes an afternoon and it is the cheapest insurance in this whole plan — a name failure
+discovered after you've printed 50,000 envelopes costs you a quarter.
+
+1. **IP India public search** — wordmark *and* phonetic, in **Class 30** (condiments, seasonings, soups) *and* **Class 32** (preparations for making beverages). Both, because you're positioning a seasoning as a drink.
+2. **MCA name availability** (RUN service) if you'll incorporate under it.
+3. **Domains** — `.in` and `.com`.
+4. **Instagram, YouTube and a Blinkit brand-name search** — for handles and for unregistered incumbents.
+5. **Plain Google** — `"[name]" + drink / tea / food / beverage`. Common-law users don't appear in the trademark register but will still fight you.
+6. **The phone test** — say it once to someone who hasn't seen it written. Can they spell it back? If not, you'll lose every word-of-mouth search.
+7. **Meaning check** — Hindi, Telugu, Tamil, plus Arabic and English. You're launching in AP/Telangana and exporting later; a word that's fine in one and unfortunate in another is a trap.
+8. **Big-brand sweep across *all* classes in your export markets.** This is the `NOON` lesson: a giant in an unrelated class in the Gulf can still block you there.
+
+**A note on the two heritage names I'd earlier floated (`CHARU`, `SAARU`):** drop both, and for a
+specific reason — *charu* is Telugu for rasam. In Hyderabad and Andhra, which is your entire launch
+market, the name reinstates the exact commodity anchor this whole document exists to escape. A
+heritage word only works as a brand where the audience *doesn't* already use it as the grocery word.
+Yours does.
 
 ## 8. One legal note
 
