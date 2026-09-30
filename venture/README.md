@@ -20,7 +20,8 @@ both formats from launch. Separate venture from TENDS and Kariva.
 | Know whether to do this at all | **[`06-viability.md`](06-viability.md)** |
 | Know what to do on Monday | **[`05-first-100k-plan.md`](05-first-100k-plan.md)** |
 | Know what we already decided, and what we rejected and why | **[`09-decision-log.md`](09-decision-log.md)** |
-| Check what you originally said | [`10-founder-inputs.md`](10-founder-inputs.md) |
+| Check what you originally said | [`11-packaging-artwork.md`](11-packaging-artwork.md) | **Label copy of record + compliance key.** All three pack formats, full nutrition panel, the 15-element compliance key with the rule behind each, claims audit, print spec, and the five gates before artwork release. Visual proof sheet linked at the top |
+| [`10-founder-inputs.md`](10-founder-inputs.md) |
 
 ---
 
@@ -38,6 +39,7 @@ both formats from launch. Separate venture from TENDS and Kariva.
 | [`07-naming-and-hook.md`](07-naming-and-hook.md) | **The hook.** Price-anchoring trap, tagline, insight line, pack lockup, café menu line, per-channel messaging, corrected brand shortlist + 8-point screening gate, words to never use |
 | [`08-campaigns.md`](08-campaigns.md) | **Launch campaigns.** The 20-Second Brew, Guess What's In It, The 4PM Swap, Savoury vs Sweet, the Blind Flight — sequencing, ₹0 paid budget, why the chug challenge was redirected |
 | [`09-decision-log.md`](09-decision-log.md) | **36 decisions taken, 19 options rejected with reasons, 8 open questions with owners, and every externally verified fact with its source and date** |
+| [`11-packaging-artwork.md`](11-packaging-artwork.md) | **Label copy of record + compliance key.** All three pack formats, full nutrition panel, the 15-element compliance key with the rule behind each, claims audit, print spec, and the five gates before artwork release. Visual proof sheet linked at the top |
 | [`10-founder-inputs.md`](10-founder-inputs.md) | **Source record.** The original brief and clarification answers preserved as given, plus a table separating derived estimates from stated facts |
 
 ---
@@ -45,7 +47,7 @@ both formats from launch. Separate venture from TENDS and Kariva.
 ## The eight conclusions that matter most
 
 1. **Don't sell rasam — create the savoury hot drink category.** At ~₹3.50 COGS for a 3 g sachet, this cannot make money as a rasam commodity, and makes 60%+ gross margin as a hot drink. The pricing *is* the positioning. → `00` §1, `03` §2
-2. **Sell on subtraction, not gut health.** `0 SUGAR · 0 CAFFEINE · 0 DAIRY · ~6 KCAL` is legal, free and on-trend. A printed gut-health claim drags you into FSSAI's nutraceutical regime and destroys the "easy to register" advantage you correctly prioritised. → `02` §2
+2. **Sell on subtraction, not gut health.** `NO ADDED SUGAR · CAFFEINE FREE · NO DAIRY` is legal, free and on-trend. *(Corrected — "0 g sugar" is not printable; tamarind's natural sugars fail the 0.5 g/100 g threshold. See `11` §1.)* A printed gut-health claim drags you into FSSAI's nutraceutical regime and destroys the "easy to register" advantage you correctly prioritised. → `02` §2
 3. **Offtake per account varies ~20x — one corporate pantry ≈ 15 cafés.** The gap between losing ₹12,700/month and making ₹35,300/month is *five corporate accounts and four banquet events*, not fifty cafés. **Track sachets per account, never account count.** → `06` §2
 4. **Cafés first, hotels at month 4 via a co-packer.** A hotel purchase desk won't onboard a home-premises producer — a document gate, not a taste or selling problem. Cafés reach the same audience faster and pay in 15 days, not 90. → `05` §1a
 5. **Spend ₹35,000, not ₹1 lakh.** One metric decides everything: sachets per listed café per month, and whether they reorder. Kill/reframe/go thresholds are explicit. → `06` §6
