@@ -1,0 +1,432 @@
+<title>Built Small</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@400;600;800;900&family=DM+Mono:wght@400;500&display=swap">
+<style>
+  /* Layout: full-bleed 4:5 photographic frames. A hairline inset rule, mono corner
+     marks and a measure bar recur on every frame; the headline block anchors to
+     whichever corner that photograph left empty. All internals in cqw, so one
+     frame scales from 1080px export down to phone width untouched. */
+  :root {
+    /* Brand — fixed in both themes; these go to Instagram. */
+    --cream:   #FAF7EF;
+    --ink:     #16233F;
+    --crimson: #D92C56;
+    --sand:    #C9B79C;
+    --water:   #9FC0CE;
+
+    /* Page chrome — light */
+    --ui-bg:   #E9E5DA;
+    --ui-fg:   #1B2133;
+    --ui-mute: #6E7589;
+    --ui-card: #F5F2E8;
+    --ui-line: #D3CDBD;
+
+    --serif: "Instrument Serif", "Times New Roman", serif;
+    --sans:  "Figtree", "Helvetica Neue", Arial, sans-serif;
+    --mono:  "DM Mono", ui-monospace, Menlo, monospace;
+
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ui-bg: #12161F; --ui-fg: #E9E5DA; --ui-mute: #949BB0;
+      --ui-card: #1A1F2C; --ui-line: #2A3146; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ui-bg: #12161F; --ui-fg: #E9E5DA; --ui-mute: #949BB0;
+    --ui-card: #1A1F2C; --ui-line: #2A3146; color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--ui-bg); color: var(--ui-fg); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+
+  .page { max-width: 620px; margin: 0 auto; padding-inline: 16px; padding-block: 36px 64px; }
+
+  .masthead { display: flex; flex-direction: column; gap: 10px; }
+  .masthead .kicker { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--ui-mute); }
+  .masthead h1 { margin: 0; font-size: clamp(30px, 8vw, 42px); font-weight: 800; letter-spacing: -.03em; text-wrap: balance; }
+  .masthead p { margin: 0; max-width: 52ch; font-size: 15px; line-height: 1.55; color: var(--ui-mute); }
+
+  .deck { display: flex; flex-direction: column; gap: 30px; margin-top: 34px; }
+  .framewrap { display: flex; flex-direction: column; gap: 8px; }
+  .framelabel { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ui-mute); }
+
+  /* ================= frame ================= */
+  .f {
+    container-type: inline-size;
+    position: relative;
+    width: 100%; max-width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: var(--ink);
+    isolation: isolate;
+  }
+  .f img.ph {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* directional scrims, one per anchor */
+  .scrim { position: absolute; inset: 0; pointer-events: none; }
+  .s-bottom { background: linear-gradient(to top, rgba(10,14,24,.88) 0%, rgba(10,14,24,.55) 26%, rgba(10,14,24,0) 56%); }
+  .s-right  { background: linear-gradient(to left, rgba(10,14,24,.86) 0%, rgba(10,14,24,.5) 34%, rgba(10,14,24,0) 68%); }
+  .s-top-light { background: linear-gradient(to bottom, rgba(250,247,239,.96) 0%, rgba(250,247,239,.93) 38%, rgba(250,247,239,.78) 56%, rgba(250,247,239,.3) 74%, rgba(250,247,239,0) 88%); }
+  .s-soft   { background: linear-gradient(to top, rgba(10,14,24,.5) 0%, rgba(10,14,24,0) 45%); }
+
+  .grain {
+    position: absolute; inset: 0; pointer-events: none;
+    opacity: .16; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 160px 160px;
+  }
+
+  /* hairline inset frame + corner marks */
+  .plate { position: absolute; inset: 4.6cqw; pointer-events: none; }
+  .plate .edge { position: absolute; inset: 0; border: .19cqw solid currentColor; opacity: .34; }
+  .f.light-ui { color: var(--ink); }
+  .f:not(.light-ui) { color: var(--cream); }
+
+  .mark {
+    position: absolute;
+    font-family: var(--mono);
+    font-size: 2.35cqw;
+    letter-spacing: .17em;
+    text-transform: uppercase;
+    opacity: .78;
+    white-space: nowrap;
+  }
+  .m-tl { top: 7.6cqw; left: 7.6cqw; }
+  .m-tr { top: 7.6cqw; right: 7.6cqw; }
+  .m-br { bottom: 7.6cqw; right: 7.6cqw; }
+
+  /* ================= copy block ================= */
+  .copy {
+    position: absolute;
+    display: flex; flex-direction: column;
+    gap: 2.6cqw;
+    z-index: 2;
+  }
+  .a-bottom { left: 8.6cqw; right: 8.6cqw; bottom: 13.5cqw; }
+  .a-right  { right: 8.6cqw; bottom: 13.5cqw; width: 62cqw; text-align: right; align-items: flex-end; }
+  .a-top    { left: 8.6cqw; right: 8.6cqw; top: 14cqw; }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 2.5cqw; letter-spacing: .2em; text-transform: uppercase;
+    opacity: .72;
+  }
+
+  .head { margin: 0; display: flex; flex-direction: column; }
+  .a-right .head { align-items: flex-end; }
+
+  .l-serif {
+    font-family: var(--serif); font-weight: 400;
+    font-size: 8.4cqw; line-height: .98; letter-spacing: -.01em;
+  }
+  .l-serif.it { font-style: italic; }
+  .l-mono {
+    font-family: var(--mono); font-size: 3cqw;
+    letter-spacing: .26em; text-transform: uppercase;
+    opacity: .76; padding-block: 1.4cqw;
+  }
+  .l-mega {
+    font-family: var(--sans); font-weight: 900;
+    font-size: 13.6cqw; line-height: .86; letter-spacing: -.045em;
+  }
+  .l-mega.sm { font-size: 11.4cqw; }
+  .l-mega .thin { font-weight: 400; }
+  .l-mega .red  { color: var(--crimson); }
+
+  .sub {
+    margin: 0;
+    font-size: 3.5cqw; line-height: 1.5; font-weight: 400;
+    max-width: 62cqw; opacity: .9;
+  }
+  .a-right .sub { max-width: 100%; }
+  .a-bottom .sub { max-width: 66cqw; }
+
+  .punch {
+    margin: 0;
+    font-size: 4.3cqw; line-height: 1.22; font-weight: 800;
+    letter-spacing: -.015em;
+    color: var(--crimson);
+  }
+  .f:not(.light-ui) .punch { color: #FFC9D4; }
+
+  /* ================= measure bar (the data device) ================= */
+  .measure { display: flex; flex-direction: column; gap: 1.8cqw; width: 100%; }
+  .bar { display: flex; height: 2.2cqw; width: 100%; overflow: hidden; border-radius: 999cqw; }
+  .bar span { display: block; height: 100%; }
+  .barkey {
+    display: flex; justify-content: space-between; gap: 3cqw;
+    font-family: var(--mono); font-size: 2.3cqw;
+    letter-spacing: .1em; text-transform: uppercase; opacity: .82;
+  }
+  .barkey b { font-weight: 500; }
+
+  /* swatch chips */
+  .chips { position: absolute; bottom: 7.6cqw; left: 7.6cqw; display: flex; gap: .9cqw; }
+  .chips i { display: block; width: 4.4cqw; height: 3cqw; }
+
+  /* hairline arc */
+  .arc { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: .3; }
+
+  /* logo */
+  .logo { display: inline-flex; align-items: center; font-family: var(--sans); font-weight: 900; letter-spacing: -.05em; }
+  .logo .w { font-size: 11cqw; line-height: 1; }
+  .logo .s {
+    width: 8.4cqw; height: 8.4cqw; border-radius: 50%;
+    background: var(--crimson); color: #fff;
+    display: grid; place-items: center;
+    font-size: 5.6cqw; margin-left: -2.2cqw;
+  }
+
+  /* ================= caption + meta ================= */
+  .caption { margin-top: 40px; background: var(--ui-card); border: 1px solid var(--ui-line); border-radius: 6px; padding: 20px; }
+  .caption h2 { margin: 0 0 12px; font-size: 12px; font-family: var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--ui-mute); font-weight: 500; }
+  .caption pre { margin: 0 0 16px; font-family: var(--sans); font-size: 15px; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; }
+  .caption button {
+    font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+    padding: 9px 16px; border-radius: 4px; border: 1px solid var(--ui-fg);
+    background: transparent; color: var(--ui-fg); cursor: pointer;
+  }
+  .caption button:hover { background: var(--ui-fg); color: var(--ui-bg); }
+  .caption button:focus-visible { outline: 2px solid var(--crimson); outline-offset: 2px; }
+
+  .meta { margin-top: 28px; font-family: var(--mono); font-size: 11.5px; line-height: 1.75; color: var(--ui-mute); }
+  .meta b { color: var(--ui-fg); font-weight: 500; }
+</style>
+
+<div class="page">
+  <header class="masthead">
+    <div class="kicker">Carousel · Necessity × Declaration</div>
+    <h1>Built Small</h1>
+    <p>Seven editorial frames at 1080 × 1350. One idea per swipe, each anchored to the empty half of its photograph.</p>
+  </header>
+
+  <div class="deck">
+
+    <!-- ============ 01 — HOOK ============ -->
+    <div class="framewrap">
+      <div class="framelabel">01 · Hook</div>
+      <div class="f">
+        <img class="ph" src="img/01.jpg" alt="A small apricot Cavapoo sitting upright on a bentwood cafe chair in morning light.">
+        <div class="scrim s-right"></div>
+        <div class="grain"></div>
+        <svg class="arc" viewBox="0 0 400 500" fill="none" aria-hidden="true">
+          <path d="M405 60 C 300 150, 180 120, 150 240 C 125 345, 260 370, 330 300" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"/>
+        </svg>
+        <div class="plate"><div class="edge"></div></div>
+        <div class="mark m-tl">Tends</div>
+        <div class="mark m-tr">01 — 07</div>
+        <div class="copy a-right">
+          <h2 class="head">
+            <span class="l-serif it">A small dog</span>
+            <span class="l-mono">is not a</span>
+            <span class="l-mega">mini<br>big dog.</span>
+          </h2>
+          <p class="sub">They are not a smaller version of the same animal. They run on a tighter system.</p>
+          <div class="l-mono" style="padding-block:0;opacity:.62">Swipe ↘</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 02 — SCALE ============ -->
+    <div class="framewrap">
+      <div class="framelabel">02 · The problem</div>
+      <div class="f light-ui">
+        <img class="ph" src="img/06.jpg" alt="A miniature dachshund standing beside a stainless steel bowl almost as tall as it is.">
+        <div class="scrim s-top-light"></div>
+        <div class="grain"></div>
+        <div class="plate"><div class="edge"></div></div>
+        <div class="mark m-tl">The problem</div>
+        <div class="mark m-tr">02 — 07</div>
+        <div class="copy a-top">
+          <h2 class="head">
+            <span class="l-serif">Made for a dog</span>
+            <span class="l-mega sm"><span class="red">ten times</span><br>their size.</span>
+          </h2>
+          <p class="sub">Most dog food is designed for big dogs. Small-breed versions are usually the same recipe, made smaller.</p>
+        </div>
+        <div class="copy a-bottom" style="bottom: 9cqw">
+          <p class="punch">Smaller kibble. Same food.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 03 — PORTION ============ -->
+    <div class="framewrap">
+      <div class="framelabel">03 · Portion</div>
+      <div class="f">
+        <img class="ph" src="img/02.jpg" alt="A hand lowering a small ceramic bowl with a tiny portion onto an oak floor as a small Maltese waits.">
+        <div class="scrim s-bottom"></div>
+        <div class="grain"></div>
+        <div class="plate"><div class="edge"></div></div>
+        <div class="mark m-tl">Portion</div>
+        <div class="mark m-tr">03 — 07</div>
+        <div class="copy a-bottom">
+          <h2 class="head">
+            <span class="l-serif it">Their whole dinner</span>
+            <span class="l-mega">fits in<br>your palm.</span>
+          </h2>
+          <div class="measure">
+            <div class="bar">
+              <span style="width:14%;background:var(--crimson)"></span>
+              <span style="width:86%;background:rgba(250,247,239,.22)"></span>
+            </div>
+            <div class="barkey"><b>Small dog meal</b><b>Big dog meal</b></div>
+          </div>
+          <p class="punch">Less food in. So every bite has to do more.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 04 — WATER ============ -->
+    <div class="framewrap">
+      <div class="framelabel">04 · Water</div>
+      <div class="f light-ui">
+        <img class="ph" src="img/03.jpg" alt="A miniature schnauzer drinking from a shallow stoneware bowl in morning light.">
+        <div class="scrim s-top-light"></div>
+        <div class="grain"></div>
+        <div class="plate"><div class="edge"></div></div>
+        <div class="mark m-tl">Water</div>
+        <div class="mark m-tr">04 — 07</div>
+        <div class="copy a-top">
+          <h2 class="head">
+            <span class="l-serif">Most wet food is</span>
+            <span class="l-mega">mostly<br><span class="red">water.</span></span>
+          </h2>
+          <div class="measure" style="max-width:66cqw">
+            <div class="bar">
+              <span style="width:30%;background:var(--crimson)"></span>
+              <span style="width:70%;background:var(--water)"></span>
+            </div>
+            <div class="barkey"><b>30% food</b><b>70% water</b></div>
+          </div>
+          <p class="punch">3 spoons in 10 do the work.</p>
+        </div>
+        <div class="chips">
+          <i style="background:var(--crimson)"></i><i style="background:var(--water)"></i>
+          <i style="background:var(--sand)"></i><i style="background:var(--cream)"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 05 — TREATS ============ -->
+    <div class="framewrap">
+      <div class="framelabel">05 · Treats</div>
+      <div class="f">
+        <img class="ph" src="img/04.jpg" alt="A hand offering one small treat to a long-haired chihuahua reaching up, in golden hour light.">
+        <div class="scrim s-bottom"></div>
+        <div class="grain"></div>
+        <div class="plate"><div class="edge"></div></div>
+        <div class="mark m-tl">Treats</div>
+        <div class="mark m-tr">05 — 07</div>
+        <div class="copy a-bottom">
+          <h2 class="head">
+            <span class="l-serif it">One treat is never</span>
+            <span class="l-mega">just one<br>treat.</span>
+          </h2>
+          <div class="measure">
+            <div class="bar">
+              <span style="width:33%;background:#E8B64C"></span>
+              <span style="width:67%;background:rgba(250,247,239,.22)"></span>
+            </div>
+            <div class="barkey"><b>One treat</b><b>Everything else they eat today</b></div>
+          </div>
+          <p class="punch">A nibble to you. A third of their day.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 06 — THE RULE ============ -->
+    <div class="framewrap">
+      <div class="framelabel">06 · The rule</div>
+      <div class="f">
+        <img class="ph" src="img/05.jpg" alt="A pomeranian resting its chin on a boucle sofa arm, city skyline softly out of focus behind.">
+        <div class="scrim s-right"></div>
+        <div class="grain"></div>
+        <div class="plate"><div class="edge"></div></div>
+        <div class="mark m-tl">The rule</div>
+        <div class="mark m-tr">06 — 07</div>
+        <div class="copy a-right">
+          <h2 class="head">
+            <span class="l-serif it">Less room means</span>
+            <span class="l-mega">no room<br>for filler.</span>
+          </h2>
+          <p class="sub">Every choice carries more weight when there is less of it.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 07 — CLOSE ============ -->
+    <div class="framewrap">
+      <div class="framelabel">07 · Close</div>
+      <div class="f">
+        <img class="ph" src="img/07.jpg" alt="A small shih tzu trotting along a London pavement at golden hour, its owner walking just behind.">
+        <div class="scrim s-bottom"></div>
+        <div class="grain"></div>
+        <svg class="arc" viewBox="0 0 400 500" fill="none" aria-hidden="true">
+          <path d="M-5 190 C 110 140, 150 250, 262 215 C 350 188, 372 120, 340 70" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"/>
+        </svg>
+        <div class="plate"><div class="edge"></div></div>
+        <div class="mark m-tl">Small breed only</div>
+        <div class="mark m-tr">07 — 07</div>
+        <div class="copy a-bottom">
+          <div class="logo"><span class="w">TEND</span><span class="s">S</span></div>
+          <h2 class="head">
+            <span class="l-mega sm">Built for<br>small dogs.</span>
+            <span class="l-serif it" style="font-size:7cqw">Only.</span>
+          </h2>
+          <p class="punch">✦ Small breed only. Big care always.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <section class="caption">
+    <h2>Caption</h2>
+    <pre id="cap-text">You already knew they were different. This is why.
+
+Smaller stomach. Tighter margins. Every bite doing more.
+Most food is built for a bigger dog and shrunk down. That isn't the same thing.
+
+✦ Small breed only. Big care always.</pre>
+    <button id="copy" type="button">Copy caption</button>
+  </section>
+
+  <p class="meta">
+    <b>Format</b> 1080 × 1350 (4:5) · 7 frames<br>
+    <b>System</b> Necessity × Declaration × Carousel (Ns, D, C)<br>
+    <b>Type</b> Instrument Serif · Figtree · DM Mono<br>
+    <b>Note</b> Proportions in the measure bars are illustrative.
+  </p>
+</div>
+
+<script>
+  (function () {
+    var btn = document.getElementById('copy');
+    var src = document.getElementById('cap-text');
+    if (!btn || !src) return;
+    btn.addEventListener('click', function () {
+      var done = function () {
+        btn.textContent = 'Copied';
+        setTimeout(function () { btn.textContent = 'Copy caption'; }, 1600);
+      };
+      var fallback = function () {
+        var r = document.createRange();
+        r.selectNodeContents(src);
+        var sel = window.getSelection();
+        sel.removeAllRanges(); sel.addRange(r);
+        btn.textContent = 'Selected — press copy';
+        setTimeout(function () { btn.textContent = 'Copy caption'; }, 2200);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(src.textContent).then(done, fallback);
+      } else { fallback(); }
+    });
+  })();
+</script>
