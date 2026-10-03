@@ -1,26 +1,20 @@
 <title>Understand Small Dogs</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@400;500;700;800;900&family=DM+Mono:wght@400;500&display=swap">
 <style>
-  /* Layout: two carousels of five 4:5 frames each. Photo and type never share
-     space: A puts the photo in an inset panel with type in its own panel; B puts
-     it in an arched window beside a numeral column. Every frame is a container,
-     and its internals are sized in cqw so it scales from 1080px to phone width. */
+  /* Layout: five 4:5 poster frames. Each photograph is a still life that shows
+     the idea on its own, set in an arched window beside a serif numeral column;
+     small leader-line labels point at objects, never at dogs. Every frame is a
+     container and is sized in cqw, so it scales from 1080px export to phone. */
   :root {
-    /* A · Golden Hour — fixed, these export to Instagram */
-    --a-bg:     #1C130D;
-    --a-cream:  #F6EEDF;
-    --a-amber:  #EDB25A;
-    --a-mute:   #B9A68C;
+    /* Frames — the site's own palette, fixed in both themes */
+    --b-bg:    #FDFCEF;
+    --b-ink:   #0D1E4C;
+    --b-navy:  #1F2D4D;
+    --b-red:   #D92C56;
+    --b-redhi: #FF5C80;
+    --b-line:  rgba(13, 30, 76, .22);
 
-    /* B · Cream Poster — the site's own palette */
-    --b-bg:     #FDFCEF;
-    --b-ink:    #0D1E4C;
-    --b-navy:   #1F2D4D;
-    --b-red:    #D92C56;
-    --b-redhi:  #FF5C80;
-    --b-line:   rgba(13, 30, 76, .22);
-
-    /* page chrome — light */
+    /* Page chrome — light */
     --ui-bg:   #E9E5DA;
     --ui-fg:   #1B2133;
     --ui-mute: #6E7589;
@@ -52,90 +46,75 @@
   .masthead h1 { margin: 0; font-size: clamp(30px, 8vw, 42px); font-weight: 800; letter-spacing: -.03em; }
   .masthead p { margin: 0; max-width: 52ch; font-size: 15px; line-height: 1.55; color: var(--ui-mute); }
 
-  .version { margin-top: 44px; display: flex; flex-direction: column; gap: 6px; }
-  .version h2 { margin: 0; font-size: 22px; font-weight: 800; letter-spacing: -.02em; }
-  .version p { margin: 0; font-size: 14px; line-height: 1.55; color: var(--ui-mute); max-width: 54ch; }
-
-  .deck { display: flex; flex-direction: column; gap: 26px; margin-top: 20px; }
+  .deck { display: flex; flex-direction: column; gap: 26px; margin-top: 30px; }
   .framewrap { display: flex; flex-direction: column; gap: 8px; }
   .framelabel { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ui-mute); }
 
   .f { container-type: inline-size; position: relative; width: 100%; max-width: 100%; aspect-ratio: 4 / 5; overflow: hidden; }
   .f img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
-  .grain {
-    position: absolute; inset: 0; pointer-events: none; opacity: .14; mix-blend-mode: overlay;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
-    background-size: 160px 160px;
-  }
-
-  /* ======================= A · GOLDEN HOUR ======================= */
-  .A { background: var(--a-bg); color: var(--a-cream); }
-  .A .ph { position: absolute; left: 6cqw; right: 6cqw; overflow: hidden; }
-  .A .ph.top { top: 6cqw;  height: 60cqw; }
-  .A .ph.bot { bottom: 8cqw; height: 60cqw; }
-  .A .ph.strip { top: 6cqw; height: 47cqw; }
-
-  .A .txt { position: absolute; left: 8.5cqw; right: 8.5cqw; display: flex; flex-direction: column; gap: 2.3cqw; }
-  .A .txt.below { top: 70cqw; bottom: 10cqw; justify-content: center; }
-  .A .txt.above { top: 8cqw;  bottom: 72cqw; justify-content: center; }
-  .A .txt.close { top: 57cqw; bottom: 10cqw; justify-content: center; }
-
-  .A .tick { width: 10cqw; height: .5cqw; background: var(--a-amber); }
-  .A .setup { font-family: var(--serif); font-style: italic; font-size: 6cqw; line-height: 1; color: var(--a-mute); }
-  .A .pay { margin: 0; font-family: var(--sans); font-weight: 900; font-size: 8.6cqw; line-height: .93; letter-spacing: -.04em; text-wrap: balance; }
-  .A .pay.xl { font-size: 11.2cqw; line-height: .9; }
-  .A .body { margin: 0; font-size: 3.25cqw; line-height: 1.5; opacity: .86; max-width: 74cqw; }
-  .A .punch { margin: 0; font-size: 3.75cqw; line-height: 1.25; font-weight: 800; color: var(--a-amber); letter-spacing: -.01em; }
-
-  .A .marks {
-    position: absolute; left: 6cqw; right: 6cqw; bottom: 2.4cqw;
-    display: flex; justify-content: space-between;
-    font-family: var(--mono); font-size: 2.15cqw; letter-spacing: .18em; text-transform: uppercase;
-    color: var(--a-mute); opacity: .8;
-  }
-  .A .ph.bot ~ .marks { bottom: 2.4cqw; }
-
-  /* ======================= B · CREAM POSTER ======================= */
+  /* ---------- frame scaffolding ---------- */
   .B { background: var(--b-bg); color: var(--b-ink); }
   .B .rule { position: absolute; left: 7cqw; right: 7cqw; height: .2cqw; background: var(--b-line); }
   .B .rule.t { top: 10cqw; }
   .B .rule.b { bottom: 9.6cqw; }
-  .B .mk {
-    position: absolute; font-family: var(--mono); font-size: 2.2cqw; letter-spacing: .18em; text-transform: uppercase;
-    opacity: .7; white-space: nowrap;
-  }
+  .B .mk { position: absolute; font-family: var(--mono); font-size: 2.2cqw; letter-spacing: .18em; text-transform: uppercase; opacity: .7; white-space: nowrap; }
   .B .mk.tl { top: 5.4cqw; left: 7cqw; }
   .B .mk.tr { top: 5.4cqw; right: 7cqw; }
   .B .mk.br { bottom: 5cqw; right: 7cqw; }
-  .B .mk.bl { bottom: 5cqw; left: 7cqw; }
 
-  .B .arch { position: absolute; top: 14cqw; width: 43cqw; height: 54cqw; border-radius: 21.5cqw 21.5cqw 0 0; overflow: hidden; }
+  /* arched window */
+  .B .arch { position: absolute; top: 14cqw; width: 48cqw; height: 60cqw; border-radius: 24cqw 24cqw 0 0; overflow: hidden; }
   .B .arch.r { right: 7cqw; }
   .B .arch.l { left: 7cqw; }
 
-  .B .col { position: absolute; top: 14cqw; width: 36cqw; height: 54cqw; display: flex; flex-direction: column; }
+  /* numeral column */
+  .B .col { position: absolute; top: 14cqw; width: 31cqw; height: 60cqw; display: flex; flex-direction: column; }
   .B .col.l { left: 7cqw; }
   .B .col.r { right: 7cqw; }
   .B .num { font-family: var(--serif); font-size: 25cqw; line-height: .78; color: var(--b-red); letter-spacing: -.02em; }
   .B .lab { margin-top: 2.6cqw; font-family: var(--mono); font-size: 2.3cqw; letter-spacing: .2em; text-transform: uppercase; opacity: .65; }
-  .B .body { margin: auto 0 0; font-size: 3.15cqw; line-height: 1.5; }
+  .B .body { margin: auto 0 0; font-size: 3cqw; line-height: 1.5; }
 
-  .B .low { position: absolute; left: 7cqw; right: 7cqw; top: 72cqw; bottom: 12cqw; display: flex; flex-direction: column; justify-content: center; gap: 2.2cqw; }
+  /* headline block */
+  .B .low { position: absolute; left: 7cqw; right: 7cqw; top: 78cqw; bottom: 12cqw; display: flex; flex-direction: column; justify-content: center; gap: 2.2cqw; }
   .B .setup { font-family: var(--serif); font-style: italic; font-size: 6.2cqw; line-height: 1; opacity: .72; }
   .B .pay { margin: 0; font-family: var(--sans); font-weight: 900; font-size: 8.4cqw; line-height: .93; letter-spacing: -.04em; text-wrap: balance; }
   .B .punch { margin: 0; font-size: 3.7cqw; line-height: 1.25; font-weight: 800; color: var(--b-red); letter-spacing: -.01em; }
 
-  /* B · closing frame — inverted to navy */
+  /* ---------- leader-line labels on the photographs ----------
+     positioned in % of the arch; .dn hangs a line down from the label to the
+     object, .up raises one from a label below the object */
+  .tag {
+    position: absolute; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: .7cqw;
+    font-family: var(--mono); font-weight: 500; font-size: 1.95cqw; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--b-ink); white-space: nowrap;
+  }
+  .tag.up { flex-direction: column-reverse; }
+  .tag i { position: relative; display: block; width: .2cqw; height: var(--len, 4cqw); background: var(--b-ink); }
+  .tag i::after {
+    content: ""; position: absolute; left: 50%; width: 1.3cqw; height: 1.3cqw; border-radius: 50%;
+    background: var(--b-red); border: .3cqw solid var(--b-bg); transform: translate(-50%, 50%); bottom: 0;
+  }
+  .tag.up i::after { top: 0; bottom: auto; transform: translate(-50%, -50%); }
+
+  /* ---------- closing frame ---------- */
   .B.end { background: var(--b-navy); color: var(--b-bg); }
   .B.end .rule { background: rgba(253,252,239,.22); }
-  .B.end .stack { position: absolute; left: 7cqw; right: 7cqw; top: 27cqw; display: flex; flex-direction: column; gap: 3cqw; }
-  .B.end .big-it { font-family: var(--serif); font-style: italic; font-size: 11.6cqw; line-height: .95; letter-spacing: -.015em; opacity: .9; }
-  .B.end .big { margin: 0; font-family: var(--sans); font-weight: 900; font-size: 13.4cqw; line-height: .88; letter-spacing: -.045em; color: var(--b-redhi); }
-  .B.end .foot { position: absolute; left: 7cqw; bottom: 15cqw; width: 50cqw; font-size: 3.6cqw; line-height: 1.45; opacity: .88; }
-  .B.end .disc { position: absolute; right: 7cqw; bottom: 13cqw; width: 27cqw; height: 27cqw; border-radius: 50%; overflow: hidden; }
+  .B.end .stack { position: absolute; left: 7cqw; right: 7cqw; top: 15cqw; display: flex; flex-direction: column; gap: 2.4cqw; }
+  .B.end .big-it { font-family: var(--serif); font-style: italic; font-size: 9.4cqw; line-height: .98; letter-spacing: -.015em; opacity: .9; }
+  .B.end .big { margin: 0; font-family: var(--sans); font-weight: 900; font-size: 11.6cqw; line-height: .88; letter-spacing: -.045em; color: var(--b-redhi); }
+  .B.end .pane { position: absolute; left: 7cqw; right: 7cqw; top: 59cqw; height: 46cqw; border-radius: 23cqw 23cqw 0 0; overflow: hidden; }
+  .B.end .kg {
+    position: absolute; top: 106.6cqw; transform: translateX(-50%);
+    font-family: var(--mono); font-size: 2.15cqw; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; opacity: .85;
+  }
+  .B.end .foot { position: absolute; left: 7cqw; right: 7cqw; bottom: 5cqw; display: flex; justify-content: space-between; align-items: baseline; gap: 4cqw; }
+  .B.end .foot span:first-child { font-size: 3.3cqw; line-height: 1.3; font-weight: 500; }
+  .B.end .foot span:last-child { font-family: var(--mono); font-size: 2.2cqw; letter-spacing: .18em; text-transform: uppercase; opacity: .7; white-space: nowrap; }
 
-  /* caption + meta */
+  /* ---------- caption + meta ---------- */
   .caption { margin-top: 44px; background: var(--ui-card); border: 1px solid var(--ui-line); border-radius: 6px; padding: 20px; }
   .caption h2 { margin: 0 0 12px; font-size: 12px; font-family: var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--ui-mute); font-weight: 500; }
   .caption pre { margin: 0 0 16px; font-family: var(--sans); font-size: 15px; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; }
@@ -151,105 +130,17 @@
 
 <div class="page">
   <header class="masthead">
-    <div class="kicker">Two carousels · Same five ideas</div>
+    <div class="kicker">Carousel · Cream Poster · v2</div>
     <h1>Understand Small Dogs</h1>
-    <p>One argument, two treatments. Five frames each at 1080 × 1350: food, water and treats share one small space, and that changes everything.</p>
+    <p>Five frames at 1080 × 1350. Each photograph shows its idea before you read a word: food, water and treats share one small space, and that changes everything.</p>
   </header>
 
-  <!-- ================================================================ -->
-  <section class="version">
-    <h2>A · Golden Hour</h2>
-    <p>Dark, warm and cinematic. The photograph sits in its own inset panel; the words get their own panel below or above it.</p>
-  </section>
-
   <div class="deck">
 
+    <!-- 01 · SPACE -->
     <div class="framewrap">
-      <div class="framelabel">A1 · Intro</div>
-      <div class="f A" data-name="A-01">
-        <div class="ph top" style="height:54cqw"><img src="img/u1.jpg" alt="A small Maltipoo looking down at a small food bowl and a water bowl in golden light." style="object-position:50% 38%"><div class="grain"></div></div>
-        <div class="txt below" style="top:63cqw">
-          <div class="tick"></div>
-          <div class="setup">Food, water, treats —</div>
-          <p class="pay">all sharing one small space.</p>
-          <p class="body">Tighter margins. Less room for error. Every choice carries more weight.</p>
-          <p class="punch">The bowl has to do more than it should.</p>
-        </div>
-        <div class="marks"><span>Understand small dogs</span><span>01 / 05</span></div>
-      </div>
-    </div>
-
-    <div class="framewrap">
-      <div class="framelabel">A2 · Less room</div>
-      <div class="f A" data-name="A-02">
-        <div class="txt above">
-          <div class="tick"></div>
-          <div class="setup">Small dogs need more —</div>
-          <p class="pay">but have less room.</p>
-          <p class="body">They eat less per meal, so each portion has to carry all the protein and nutrients they need.</p>
-          <p class="punch">Every bite carries the full weight.</p>
-        </div>
-        <div class="ph bot"><img src="img/02.jpg" alt="A hand lowering a small bowl with a tiny portion to a waiting Maltese." style="object-position:50% 8%"><div class="grain"></div></div>
-        <div class="marks"><span>Less room</span><span>02 / 05</span></div>
-      </div>
-    </div>
-
-    <div class="framewrap">
-      <div class="framelabel">A3 · Water</div>
-      <div class="f A" data-name="A-03">
-        <div class="ph top"><img src="img/u3.jpg" alt="A Shih Tzu drinking from a stoneware bowl in low golden light." style="object-position:50% 55%"><div class="grain"></div></div>
-        <div class="txt below">
-          <div class="tick"></div>
-          <div class="setup">When water fills,</div>
-          <p class="pay">density falls.</p>
-          <p class="body">Water isn't the problem. Space is. The body adapts to water. Nutrients don't always.</p>
-          <p class="punch">When density drops, there's no backup plan.</p>
-        </div>
-        <div class="marks"><span>Water</span><span>03 / 05</span></div>
-      </div>
-    </div>
-
-    <div class="framewrap">
-      <div class="framelabel">A4 · Treats</div>
-      <div class="f A" data-name="A-04">
-        <div class="txt above">
-          <div class="tick"></div>
-          <div class="setup">Small extras.</div>
-          <p class="pay">Big impact.</p>
-          <p class="body">Treats use the same space and the same calories. In a small dog, that adds up to the whole day.</p>
-          <p class="punch">They're never just treats.</p>
-        </div>
-        <div class="ph bot"><img src="img/04.jpg" alt="A hand offering one small treat to a Chihuahua reaching up in golden light." style="object-position:45% 38%"><div class="grain"></div></div>
-        <div class="marks"><span>Treats</span><span>04 / 05</span></div>
-      </div>
-    </div>
-
-    <div class="framewrap">
-      <div class="framelabel">A5 · Close</div>
-      <div class="f A" data-name="A-05">
-        <div class="ph strip"><img src="img/u5.jpg" alt="A small Cavapoo in profile, rim-lit gold against deep shadow." style="object-position:50% 28%"><div class="grain"></div></div>
-        <div class="txt close">
-          <div class="tick"></div>
-          <div class="setup" style="font-size:7.4cqw">Not different biology.</div>
-          <p class="pay xl">Different constraints.</p>
-          <p class="punch" style="color:var(--a-cream);opacity:.88;font-weight:500">Less to work with. More riding on it.</p>
-        </div>
-        <div class="marks"><span>Understand small dogs</span><span>05 / 05</span></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ================================================================ -->
-  <section class="version">
-    <h2>B · Cream Poster</h2>
-    <p>Light, graphic and poster-like, in the site's own cream, navy and crimson. The photograph sits in an arched window beside a big numeral. The last frame flips to navy with no photo at all.</p>
-  </section>
-
-  <div class="deck">
-
-    <div class="framewrap">
-      <div class="framelabel">B1 · Intro</div>
-      <div class="f B" data-name="B-01">
+      <div class="framelabel">01 · Space</div>
+      <div class="f B" data-name="01">
         <div class="mk tl">Understand small dogs</div><div class="mk tr">01 / 05</div>
         <div class="rule t"></div>
         <div class="col l">
@@ -257,7 +148,12 @@
           <div class="lab">Space</div>
           <p class="body">Tighter margins. Less room for error. Every choice carries more weight.</p>
         </div>
-        <div class="arch r"><img src="img/u1.jpg" alt="A small Maltipoo looking down at a food bowl and a water bowl." style="object-position:42% 50%"></div>
+        <div class="arch r">
+          <img src="img/k1.jpg" alt="A small round tray crammed with a bowl of kibble, a bowl of water and a dog biscuit, all touching.">
+          <div class="tag dn" style="left:34.7%;top:27%;--len:4.45cqw">Food<i></i></div>
+          <div class="tag dn" style="left:66%;top:27%;--len:4.45cqw">Water<i></i></div>
+          <div class="tag up" style="left:49%;bottom:7.5%;--len:4.45cqw">Treats<i></i></div>
+        </div>
         <div class="low">
           <div class="setup">Food, water, treats —</div>
           <p class="pay">all sharing one small space.</p>
@@ -268,12 +164,17 @@
       </div>
     </div>
 
+    <!-- 02 · LESS ROOM -->
     <div class="framewrap">
-      <div class="framelabel">B2 · Less room</div>
-      <div class="f B" data-name="B-02">
+      <div class="framelabel">02 · Less room</div>
+      <div class="f B" data-name="02">
         <div class="mk tl">Understand small dogs</div><div class="mk tr">02 / 05</div>
         <div class="rule t"></div>
-        <div class="arch l"><img src="img/02.jpg" alt="A hand lowering a small bowl with a tiny portion to a waiting Maltese." style="object-position:55% 45%"></div>
+        <div class="arch l">
+          <img src="img/k2.jpg" alt="A large steel bowl heaped with kibble beside a tiny bowl, where a small Maltese is eating.">
+          <div class="tag dn" style="left:31%;top:36%;--len:5.1cqw">Big dog's bowl<i></i></div>
+          <div class="tag up" style="left:72%;bottom:7.5%;--len:5.55cqw">Small dog's bowl<i></i></div>
+        </div>
         <div class="col r">
           <div class="num">02</div>
           <div class="lab">Less room</div>
@@ -289,9 +190,10 @@
       </div>
     </div>
 
+    <!-- 03 · WATER -->
     <div class="framewrap">
-      <div class="framelabel">B3 · Water</div>
-      <div class="f B" data-name="B-03">
+      <div class="framelabel">03 · Water</div>
+      <div class="f B" data-name="03">
         <div class="mk tl">Understand small dogs</div><div class="mk tr">03 / 05</div>
         <div class="rule t"></div>
         <div class="col l">
@@ -299,7 +201,11 @@
           <div class="lab">Water</div>
           <p class="body">Water isn't the problem. Space is. The body adapts to water. Nutrients don't always.</p>
         </div>
-        <div class="arch r"><img src="img/u3.jpg" alt="A Shih Tzu drinking from a stoneware bowl in golden light." style="object-position:50% 50%"></div>
+        <div class="arch r">
+          <img src="img/k3.jpg" alt="Side view through a clear glass bowl: a layer of wet food at the bottom and water filling the space above it.">
+          <div class="tag dn" style="left:72%;top:37%;--len:8.9cqw">Water<i></i></div>
+          <div class="tag up" style="left:28%;bottom:7.5%;--len:5.55cqw">Food<i></i></div>
+        </div>
         <div class="low">
           <div class="setup">When water fills,</div>
           <p class="pay">density falls.</p>
@@ -310,12 +216,17 @@
       </div>
     </div>
 
+    <!-- 04 · TREATS -->
     <div class="framewrap">
-      <div class="framelabel">B4 · Treats</div>
-      <div class="f B" data-name="B-04">
+      <div class="framelabel">04 · Treats</div>
+      <div class="f B" data-name="04">
         <div class="mk tl">Understand small dogs</div><div class="mk tr">04 / 05</div>
         <div class="rule t"></div>
-        <div class="arch l"><img src="img/04.jpg" alt="A hand offering one small treat to a Chihuahua reaching up." style="object-position:40% 45%"></div>
+        <div class="arch l">
+          <img src="img/k4.jpg" alt="Overhead: a small bowl holding a small dog's whole meal beside one biscuit nearly as big, with a Chihuahua's nose and paws reaching in.">
+          <div class="tag dn" style="left:37%;top:9%;--len:10.7cqw">Whole meal<i></i></div>
+          <div class="tag dn" style="left:65%;top:19%;--len:4.7cqw">One treat<i></i></div>
+        </div>
         <div class="col r">
           <div class="num">04</div>
           <div class="lab">Treats</div>
@@ -331,24 +242,27 @@
       </div>
     </div>
 
+    <!-- 05 · CONSTRAINTS -->
     <div class="framewrap">
-      <div class="framelabel">B5 · Close</div>
-      <div class="f B end" data-name="B-05">
+      <div class="framelabel">05 · Close</div>
+      <div class="f B end" data-name="05">
         <div class="mk tl">Understand small dogs</div><div class="mk tr">05 / 05</div>
         <div class="rule t"></div>
         <div class="stack">
           <div class="big-it">Not different biology.</div>
           <p class="big">Different constraints.</p>
         </div>
-        <p class="foot">Less to work with.<br>More riding on it.</p>
-        <div class="disc"><img src="img/u5.jpg" alt="A small Cavapoo in profile, rim-lit gold." style="object-position:62% 30%"></div>
-        <div class="rule b"></div>
+        <div class="pane"><img src="img/k5.jpg" alt="A Great Dane and a Chihuahua sitting side by side in the same pose, the same coat colour, only the size different." style="object-position:50% 0%"></div>
+        <div class="kg" style="left:45.9cqw">~60 kg</div>
+        <div class="kg" style="left:57.1cqw">~2 kg</div>
+        <div class="foot"><span>Less to work with. More riding on it.</span><span>Same species</span></div>
       </div>
     </div>
+
   </div>
 
   <section class="caption">
-    <h2>Caption (works for either)</h2>
+    <h2>Caption</h2>
     <pre id="cap-text">A small dog isn't a smaller version of a big dog.
 
 Food, water and treats all share the same tiny space. So every bite counts for more, and every extra counts for more too.
@@ -360,10 +274,10 @@ Not different biology. Different constraints.
   </section>
 
   <p class="meta">
-    <b>Format</b> 1080 × 1350 (4:5) · 5 frames per version<br>
+    <b>Format</b> 1080 × 1350 (4:5) · 5 frames<br>
     <b>Sequence</b> Space → Less room → Water → Treats → Constraints<br>
     <b>Type</b> Instrument Serif · Figtree · DM Mono<br>
-    <b>Note</b> No brand mark on the frames; copy is about the dog, not the product.
+    <b>Note</b> Weights on frame 05 are typical adult figures, rounded.
   </p>
 </div>
 
