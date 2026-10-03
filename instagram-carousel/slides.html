@@ -1,0 +1,68 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:"General Sans";src:url("fonts/GeneralSans-400.woff2");font-weight:400}
+@font-face{font-family:"General Sans";src:url("fonts/GeneralSans-500.woff2");font-weight:500}
+@font-face{font-family:"General Sans";src:url("fonts/GeneralSans-600.woff2");font-weight:600}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000}
+.slide{width:1080px;height:1350px;position:relative;overflow:hidden;font-family:"General Sans",sans-serif}
+.slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.scrim{position:absolute;left:0;right:0;top:0;height:62%}
+.copy{position:absolute;top:118px;left:90px;right:90px;text-align:center}
+.label{font-size:24px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;opacity:.78;margin-bottom:30px}
+h1{font-size:64px;line-height:1.12;font-weight:600;letter-spacing:-.015em}
+p{font-size:31px;line-height:1.45;font-weight:400;margin-top:26px;opacity:.92}
+.dark{color:#1d2740}
+.light{color:#fff}
+.light h1,.light p{text-shadow:0 2px 24px rgba(0,0,0,.25)}
+</style></head><body>
+
+<div class="slide" id="s1" style="background:#f3eee6">
+  <img src="src/blend.png" style="object-position:50% 100%;transform:translateY(80px)">
+  <div class="scrim" style="background:linear-gradient(#f3eee6 0%,rgba(243,238,230,.85) 45%,rgba(243,238,230,0))"></div>
+  <div class="copy dark">
+    <div class="label">The Superfood Blend</div>
+    <h1>Built around the limit.<br>Set to a higher standard.</h1>
+    <p>Full nutrition in fewer bites.<br>Designed. Not scaled-down.</p>
+  </div>
+</div>
+
+<div class="slide" id="s2">
+  <img src="src/hydration.png" style="object-position:50% 85%">
+  <div class="scrim" style="background:linear-gradient(rgba(10,6,16,.78),rgba(10,6,16,.35) 55%,rgba(10,6,16,0))"></div>
+  <div class="copy light">
+    <div class="label">The Hydration Ritual</div>
+    <h1>Every drop counts.</h1>
+    <p>Because small dogs drink less —<br>and what they drink should do more.</p>
+  </div>
+</div>
+
+<div class="slide" id="s3">
+  <img src="src/pops.png" style="object-position:50% 50%">
+  <div class="scrim" style="height:50%;background:linear-gradient(rgba(14,12,10,.72),rgba(14,12,10,.3) 60%,rgba(14,12,10,0))"></div>
+  <div class="copy light" style="top:96px">
+    <div class="label">Superfood Pops</div>
+    <h1>Fun doesn’t have<br>to be careless.</h1>
+    <p>As if lotus seeds knew.</p>
+  </div>
+</div>
+
+<div class="slide" id="s4">
+  <img src="src/touch.png" style="object-position:50% 80%">
+  <div class="scrim" style="background:linear-gradient(#efe9df 0%,rgba(239,233,223,.85) 48%,rgba(239,233,223,0))"></div>
+  <div class="copy dark">
+    <div class="label">TENDS Touch</div>
+    <h1>Built for daily life,<br>not occasional fixes.</h1>
+    <p>Balms designed for eyes, nose, and paws —<br>where friction, moisture, and exposure<br>behave differently.</p>
+  </div>
+</div>
+
+<div class="slide" id="s5overlay" style="background:transparent">
+  <div style="position:absolute;left:0;right:0;bottom:0;height:34%;background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.45))"></div>
+  <div style="position:absolute;left:64px;bottom:64px;color:#fff;font-family:'General Sans';text-shadow:0 2px 18px rgba(0,0,0,.45)">
+    <div style="font-size:22px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;opacity:.85;margin-bottom:12px">The Starter Kit</div>
+    <div style="font-size:44px;font-weight:600;letter-spacing:-.01em">Start with our Starter Kit.</div>
+  </div>
+</div>
+</body></html>
