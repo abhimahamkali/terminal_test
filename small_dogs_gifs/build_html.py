@@ -247,7 +247,7 @@ INTRO = f"""
           <div class="low"><h2 class="pay">Small dogs.<br>Small system.</h2>
             <p class="body">Every bite, sip, and treat has to do more.</p></div>
         </div>
-        <div class="rule b"></div><div class="mk br">Swipe →</div>
+        <div class="rule b"></div><div class="mk br">Know more about the small dogs →</div>
       </div>
     </div>"""
 
