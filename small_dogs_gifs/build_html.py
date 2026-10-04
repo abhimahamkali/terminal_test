@@ -220,7 +220,7 @@ def frame(i, s):
     <div class="framewrap">
       <div class="framelabel">{n:02d} · site slide {n + 2}</div>
       <div class="{cls}" data-name="{n:02d}">
-        <div class="mk tl">Built for small dogs. Not all dogs.</div>
+        <div class="mk tl">Small dogs, actually</div>
         <div class="dots" aria-label="Slide {n} of {N}">{dots}</div>
         <div class="rule t"></div>
         <div class="inner">
