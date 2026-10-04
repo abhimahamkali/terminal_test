@@ -244,7 +244,7 @@ INTRO = f"""
         {chrome(1)}
         <div class="inner">
           <div class="dome"><img src="img/intro.jpg" alt="A small Cavapoo sitting alone in a wide, empty cream room." style="object-position:50% 62%"></div>
-          <div class="low"><div class="setup">Small dogs.</div><h2 class="pay">Small system.</h2>
+          <div class="low"><h2 class="pay">Small dogs.<br>Small system.</h2>
             <p class="body">Every bite, sip, and treat has to do more.</p></div>
         </div>
         <div class="rule b"></div><div class="mk br">Swipe →</div>
