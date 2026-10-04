@@ -46,7 +46,7 @@ W, H = 480, 72
 _wave = (f"M0,{H/2} C{W*.08},{H*.2} {W*.16},{H*.9} {W*.25},{H*.7} S{W*.42},{H*.1} {W*.5},{H*.25} "
          f"S{W*.7},{H*.85} {W*.75},{H*.65} S{W*.92},{H*.1} {W},{H*.55}")
 _d5 = [(W*.10, 28, "WATER"), (W*.36, 56, "FOOD"), (W*.62, 22, "MOVEMENT"), (W*.88, 52, "TEMPERATURE")]
-D_WAVE = (f'<svg class="svgd" viewBox="-20 -10 {W+40} {H+52}" style="width:78cqw">'
+D_WAVE = (f'<svg class="svgd" viewBox="-20 -10 {W+40} {H+52}" style="width:84cqw">'
   f'<path class="draw as" d="{_wave}" pathLength="1" fill="none" stroke-width="2.8" stroke-linecap="round" {K(DRAW0, {"strokeDashoffset": 0, "opacity": .8}, D0, 1.4, "easeOut")}/>'
   + "".join(
       "".join(f'<circle class="as" cx="{x}" cy="{y}" r="7" fill="none" stroke-width="1.2" '
@@ -64,7 +64,7 @@ def _lbl7(x, y):
     lx = x + (-25 if x < 145 else 25 if x > 155 else 0)
     ly = y + (-30 if y < 145 else 40 if y > 155 else 6)
     return lx, ly, ("end" if x < 145 else "start" if x > 155 else "middle")
-D_LOOP = ('<svg class="svgd" viewBox="-100 -26 500 356" style="width:42cqw"><defs>'
+D_LOOP = ('<svg class="svgd" viewBox="-100 -26 500 356" style="width:60cqw"><defs>'
   '<marker id="arr7" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path class="af" d="M0,0 L6,3 L0,6 Z"/></marker></defs>'
   + "".join(f'<path class="draw as" d="M{a[0]:.1f},{a[1]:.1f} A120,120 0 0,1 {b[0]:.1f},{b[1]:.1f}" pathLength="1" fill="none" stroke-width="1.7" '
             f'stroke-linecap="round" marker-end="url(#arr7)" {K(DRAW0, {"strokeDashoffset": 0, "opacity": .7}, D0 + .45 + i*.18, .6, "easeOut")}/>'
@@ -81,7 +81,7 @@ D_LOOP = ('<svg class="svgd" viewBox="-100 -26 500 356" style="width:42cqw"><def
 
 # --- site slide 8 (Slide8ani)
 _rip = lambda t: R({"transform": "scale(0.75)", "opacity": 0}, {"transform": "scale(3)", "opacity": 0}, t, 3.5, 3.5, mid={"at": .12, "v": {"opacity": .55}})
-D_RINGS = (f'<svg class="svgd" viewBox="0 0 300 278" style="width:38cqw" {K({"opacity": 0, "transform": "scale(0.88)"}, SHOW, D0, .7)}><defs>'
+D_RINGS = (f'<svg class="svgd" viewBox="0 0 300 278" style="width:46cqw" {K({"opacity": 0, "transform": "scale(0.88)"}, SHOW, D0, .7)}><defs>'
   '<radialGradient id="g8c" cx="35%" cy="28%" r="65%"><stop offset="0%" stop-color="rgba(248,200,212,0.22)"/><stop offset="55%" stop-color="rgba(237,130,165,0.14)"/><stop offset="100%" stop-color="rgba(205,58,84,0.20)"/></radialGradient>'
   '<radialGradient id="g8s" cx="38%" cy="32%" r="62%"><stop offset="0%" stop-color="rgba(250,212,222,0.72)"/><stop offset="100%" stop-color="rgba(205,80,110,0.60)"/></radialGradient>'
   '<radialGradient id="g8g" cx="40%" cy="35%" r="60%"><stop offset="0%" stop-color="rgba(240,160,180,0.97)"/><stop offset="100%" stop-color="rgba(180,40,72,0.92)"/></radialGradient></defs>'
@@ -97,7 +97,7 @@ D_RINGS = (f'<svg class="svgd" viewBox="0 0 300 278" style="width:38cqw" {K({"op
   + '</svg>')
 
 # --- site slide 9 (Slide9ani)
-D_CONV = ('<svg class="svgd" viewBox="-48 -12 576 178" style="width:78cqw">'
+D_CONV = ('<svg class="svgd" viewBox="-48 -12 576 178" style="width:84cqw">'
   + "".join(f'<line class="draw" x1="{120*i}" y1="38" x2="240" y2="130" pathLength="1" stroke="#fff" stroke-width="1.2" stroke-opacity="0.5" '
             f'{K(DRAW0, {"strokeDashoffset": 0, "opacity": 1}, D0 + .45 + i*.12, .5, "easeOut")}/>' for i in range(5))
   + f'<circle cx="240" cy="130" r="6" fill="#fff" {K(POP0, {"transform": "scale(1)", "opacity": 1}, D0 + .45 + 5*.12, .4)}/>'
@@ -129,7 +129,7 @@ D_READ = ('<div class="rd"><div>'
 # --- site slide 12 (Slide12ani)
 _n12 = [("Gut", 180, 56), ("Hydration", 294, 138), ("Energy", 252, 276), ("Behaviour", 108, 276), ("Eating", 66, 138)]
 _a12 = ["M211,68 Q260,86 281,112", "M292,170 Q288,228 268,256", "M225,294 Q180,308 135,294", "M89,256 Q70,228 68,170", "M82,112 Q102,84 149,68"]
-D_PENTA = ('<svg class="svgd" viewBox="8 0 344 340" style="width:41cqw"><defs>'
+D_PENTA = ('<svg class="svgd" viewBox="8 0 344 340" style="width:47cqw"><defs>'
   '<marker id="arr12" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="rgba(255,255,255,0.55)"/></marker></defs>'
   + "".join(f'<path class="draw" d="{d}" pathLength="1" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="1.8" stroke-linecap="round" '
             f'marker-end="url(#arr12)" {K(DRAW0, {"strokeDashoffset": 0, "opacity": 1}, D0 + .45 + i*.08, .55)}/>' for i, d in enumerate(_a12))
@@ -179,10 +179,10 @@ S = [
       sub="What's on the pack isn't what the body extracts.<br>Small dogs burn faster. There's less room for error.",
       a="Unabsorbed calories still count on the label.", b="They don't count for the dog."),
  dict(kind="arch", side="l", lab="Picky eating", setup="Most picky eating", pay="is learned.", dia=D_LOOP,
-      sub="Not personality. Not breed. A pattern built between the bowl and the hand that fills it.",
+      sub="Not personality. Not breed.<br>A pattern built between the bowl and the hand that fills it.",
       a="The food is rarely the problem.", b="The pattern around it is."),
  dict(kind="arch", side="r", lab="Coat", setup="The coat", pay="is a signal.", dia=D_RINGS,
-      sub="Dullness, dryness, shedding — surface symptoms. What you see outside is what the inside is doing.",
+      sub="Dullness, dryness, shedding — surface symptoms.<br>What you see outside is what the inside is doing.",
       a="Treat the coat, treat the surface.", b="Treat the cause, the coat follows."),
  dict(kind="wide", navy=1, lab="Five systems", setup="Five systems.", pay="One mistake.", dia=D_CONV,
       sub="They all look different. The mistake is the same<br>— treat the symptom, miss the cause.",
@@ -197,7 +197,7 @@ S = [
       sub="Gut affects coat. Hydration affects energy. Energy affects behaviour. Behaviour affects eating. Eating affects gut.",
       a="Treat any one in isolation — incomplete answer.", b="Everything works together. Or nothing quite does."),
  dict(kind="arch", side="r", lab="What matters", setup="What matters", pay="most.", dia=D_EQ,
-      sub="Intake is half the equation. Delivery is the other half. The answer is what the body actually receives.",
+      sub="Intake is half the equation.<br>Delivery is the other half.<br>The answer is what the body actually receives.",
       b="It's the only number that counts."),
  dict(kind="wide", lab="Enough", setup="Most food", pay="is enough.", dia=D_ER,
       a="The distance between enough and right isn't dramatic.", b="It's just consistent. Every day. For years."),
@@ -218,21 +218,21 @@ def low(s):
 
 def frame(i, s):
     n, num = i + 2, f"{i + 1:02d}"
-    sub = f'<p class="body">{s["sub"]}</p>' if s.get("sub") else ""
-    if s["kind"] == "arch":
-        body = (f'<div class="row{" rev" if s["side"] == "r" else ""}">'
-                f'<div class="arch"><div class="dia">{s["dia"]}</div></div>'
-                f'<div class="col"><div class="num">{num}</div><div class="lab">{s["lab"]}</div>{sub}</div></div>')
-    else:
-        body = (f'<div class="top"><div class="num">{num}</div><div class="meta"><div class="lab">{s["lab"]}</div>{sub}</div></div>'
-                f'<div class="panel{" mqp" if s.get("mq") else ""}"><div class="dia">{s["dia"]}</div></div>')
+    # captions wrap naturally: no forced breaks, and the two closing lines flow as one paragraph
+    sub = f'<p class="body">{s["sub"].replace("<br>", " ")}</p>' if s.get("sub") else ""
+    pa = f'<span class="a">{s["a"]}</span> ' if s.get("a") else ""
     swipe = "" if s.get("last") else '<div class="mk br">Swipe →</div>'
     return f"""
     <div class="framewrap">
       <div class="framelabel">{num} · site slide {i + 3}</div>
       <div class="f{" navy" if s.get("navy") else ""}" data-name="{num}">
         {chrome(n)}
-        <div class="inner">{body}{low(s)}</div>
+        <div class="num">{num}</div>
+        <div class="inner">
+          <div class="top"><div class="lab">{s["lab"]}</div><div class="setup">{s["setup"]}</div><h2 class="pay">{s["pay"]}</h2></div>
+          <div class="mid"><div class="dia">{s["dia"]}</div></div>
+          <div class="caps">{sub}<p class="punch">{pa}<span class="b">{s["b"]}</span></p></div>
+        </div>
         <div class="rule b"></div>{swipe}
       </div>
     </div>"""
