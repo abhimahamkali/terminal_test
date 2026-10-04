@@ -24,7 +24,7 @@ Every word is taken from the slide it belongs to (and the slides from tendsmall.
 
 **09** — Read the dog. Not the chart. This is the evidence. Everything else is a proxy.
 
-**10** — Your dog isn't separate systems. Treat any one in isolation — incomplete answer. Everything works together. Or nothing quite does.
+**10** — Your dog isn't separate systems. Treat any one in isolation and the answer is incomplete. Everything works together. Or nothing quite does.
 
 **11** — What matters most. It's the only number that counts.
 
