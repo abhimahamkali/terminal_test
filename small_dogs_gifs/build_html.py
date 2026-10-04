@@ -229,7 +229,7 @@ def frame(i, s):
         {chrome(n)}
         <div class="num">{num}</div>
         <div class="inner">
-          <div class="top"><div class="lab">{s["lab"]}</div><div class="setup">{s["setup"]}</div><h2 class="pay">{s["pay"]}</h2></div>
+          <div class="top"><div class="setup">{s["setup"]}</div><h2 class="pay">{s["pay"]}</h2></div>
           <div class="mid"><div class="dia">{s["dia"]}</div></div>
           <div class="caps">{sub}<p class="punch">{pa}<span class="b">{s["b"]}</span></p></div>
         </div>
