@@ -167,7 +167,7 @@ D_FITS = ('<div class="fits"><div class="lines">'
 # ---------------- slides: copy verbatim from the live page
 # kind: "wide" (panel sized to the diagram) or "arch" (arch window; side "l"/"r")
 S = [
- dict(kind="wide", navy=1, lab="Less room", setup="Small dogs have", pay="less room for error.", dia=D_THREE,
+ dict(kind="wide", lab="Less room", setup="Small dogs have", pay="less room for error.", dia=D_THREE,
       b="Smaller bodies. Tighter margins. Less buffer."),
  dict(kind="wide", lab="Digestion", setup="Digestion", pay="isn't what you see.", dia=D_BARS,
       sub="Not the empty bowl. Not the clean plate.<br>The invisible part — what the body actually uses.",
@@ -244,8 +244,8 @@ INTRO = f"""
         {chrome(1)}
         <div class="inner">
           <div class="dome"><img src="img/intro.jpg" alt="A small Cavapoo sitting alone in a wide, empty cream room." style="object-position:50% 62%"></div>
-          <div class="low"><div class="setup">A small dog</div><h2 class="pay">isn't just a smaller dog.</h2>
-            <p class="body">They need the same nutrients as any dog, with much less room to fit them in.</p></div>
+          <div class="low"><div class="setup">Small dogs.</div><h2 class="pay">Small system.</h2>
+            <p class="body">Every bite, sip, and treat has to do more.</p></div>
         </div>
         <div class="rule b"></div><div class="mk br">Swipe →</div>
       </div>
