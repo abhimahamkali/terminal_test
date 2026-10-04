@@ -1,7 +1,7 @@
 // One shared cycle. Every animation is a Web Animation, so exporting a GIF is just
 // "pause everything, set currentTime, screenshot" — deterministic, frame-exact.
 (function () {
-  var T = 6500, OUT = 6050;
+  var T = 6500, OUT = 6000, GONE = 6400;
   var EASE = {
     spring: "cubic-bezier(0.2, 1.05, 0.35, 1)",   // the site's SPRING
     out:    "cubic-bezier(0.2, 0.7, 0.2, 1)",     // the site's EASE_OUT
@@ -31,8 +31,9 @@
       var m = JSON.parse(el.dataset.mq);
       el.animate([{ transform: "translateX(-25%)" }, { transform: "translateX(-50%)" }], { duration: m.p * 1000, iterations: Infinity, easing: "linear" });
     });
-    document.querySelectorAll(".inner").forEach(function (el) {
-      el.animate([{ opacity: 1, offset: 0 }, { opacity: 1, offset: OUT / T }, { opacity: 0, offset: 1 }], { duration: T, iterations: Infinity });
+    // only the diagram leaves and comes back; type, numerals and panels never move
+    document.querySelectorAll(".dia").forEach(function (el) {
+      el.animate([{ opacity: 1, offset: 0 }, { opacity: 1, offset: OUT / T }, { opacity: 0, offset: GONE / T }, { opacity: 0, offset: 1 }], { duration: T, iterations: Infinity });
     });
     if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       document.getAnimations().forEach(function (a) { a.pause(); a.currentTime = 5000; });
