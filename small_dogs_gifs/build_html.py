@@ -20,11 +20,11 @@ DRAW0 = {"strokeDashoffset": 1, "opacity": 0}
 POP0 = {"transform": "scale(0)", "opacity": 0}
 SANS = 'style="font-family:var(--sans)"'
 
-# --- site slide 3 (Slide3.tsx: lines i*.2, dash +.6)
+# --- site slide 3 (Slide3.tsx: lines i*.2; the live page shows no dash before the closing line)
 D_THREE = ('<div class="three">'
   + "".join(f'<p {K(rise("1.2cqw"), SHOW, D0 + i*.2, .55)}>{l}</p>'
             for i, l in enumerate(["They eat less.", "They burn faster.", "They feel everything sooner"]))
-  + f'<p class="dash" {K(HIDE, {"opacity": .45}, D0 + .6, .4, "out")}>—</p></div>')
+  + '</div>')
 
 # --- site slides 4 and 6 (Slide4ani / Slide6ani)
 def _bar_row(label, color, pct, d, enter, extra=""):
